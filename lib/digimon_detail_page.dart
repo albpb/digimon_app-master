@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'digimon_model.dart';
 import 'dart:async';
 
-
 class DigimonDetailPage extends StatefulWidget {
   final Digimon digimon;
   DigimonDetailPage(this.digimon);
@@ -26,7 +25,7 @@ class _DigimonDetailPageState extends State<DigimonDetailPage> {
               new Flexible(
                 flex: 1,
                 child: new Slider(
-                  activeColor: Color(0xFF0B479E),
+                  activeColor: Color.fromARGB(255, 233, 41, 41),
                   min: 0.0,
                   max: 10.0,
                   value: _sliderValue,
@@ -73,6 +72,9 @@ class _DigimonDetailPageState extends State<DigimonDetailPage> {
               new TextButton(
                 child: new Text('Try Again'),
                 onPressed: () => Navigator.of(context).pop(),
+                style: ButtonStyle(
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.red)),
               )
             ],
           );
@@ -96,11 +98,25 @@ class _DigimonDetailPageState extends State<DigimonDetailPage> {
         decoration: new BoxDecoration(
             shape: BoxShape.circle,
             boxShadow: [
-              const BoxShadow(offset: const Offset(1.0, 2.0), blurRadius: 2.0, spreadRadius: -1.0, color: const Color(0x33000000)),
-              const BoxShadow(offset: const Offset(2.0, 1.0), blurRadius: 3.0, spreadRadius: 0.0, color: const Color(0x24000000)),
-              const BoxShadow(offset: const Offset(3.0, 1.0), blurRadius: 4.0, spreadRadius: 2.0, color: const Color(0x1f000000))
+              const BoxShadow(
+                  offset: const Offset(1.0, 2.0),
+                  blurRadius: 2.0,
+                  spreadRadius: -1.0,
+                  color: const Color(0x33000000)),
+              const BoxShadow(
+                  offset: const Offset(2.0, 1.0),
+                  blurRadius: 3.0,
+                  spreadRadius: 0.0,
+                  color: const Color(0x24000000)),
+              const BoxShadow(
+                  offset: const Offset(3.0, 1.0),
+                  blurRadius: 4.0,
+                  spreadRadius: 2.0,
+                  color: const Color(0x1f000000))
             ],
-            image: new DecorationImage(fit: BoxFit.cover, image: new NetworkImage(widget.digimon.imageUrl ?? ''))),
+            image: new DecorationImage(
+                fit: BoxFit.cover,
+                image: new NetworkImage(widget.digimon.imageUrl ?? ''))),
       ),
     );
   }
@@ -114,7 +130,8 @@ class _DigimonDetailPageState extends State<DigimonDetailPage> {
           size: 40.0,
           color: Colors.black,
         ),
-        new Text('${widget.digimon.rating}/10', style: TextStyle(color: Colors.black, fontSize: 30.0))
+        new Text('${widget.digimon.rating}/10',
+            style: TextStyle(color: Colors.black, fontSize: 30.0))
       ],
     );
   }
@@ -123,14 +140,16 @@ class _DigimonDetailPageState extends State<DigimonDetailPage> {
     return new Container(
       padding: new EdgeInsets.symmetric(vertical: 32.0),
       decoration: new BoxDecoration(
-        color: Color(0xFFABCAED),
+        color: Color.fromARGB(255, 247, 115, 115),
       ),
       child: new Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           digimonImage,
-          new Text('${widget.digimon.name}', style: TextStyle(color: Colors.black, fontSize: 32.0)),
-          new Text('${widget.digimon.levelDigimon}', style: TextStyle(color: Colors.black, fontSize: 20.0)),
+          new Text('${widget.digimon.name}',
+              style: TextStyle(color: Colors.black, fontSize: 32.0)),
+          new Text('${widget.digimon.description}',
+              style: TextStyle(color: Colors.black, fontSize: 20.0)),
           Padding(
             padding: EdgeInsets.only(top: 20.0),
             child: rating,
@@ -143,9 +162,9 @@ class _DigimonDetailPageState extends State<DigimonDetailPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Color(0xFFABCAED),
+      backgroundColor: Color.fromARGB(255, 247, 115, 115),
       appBar: new AppBar(
-        backgroundColor: Color(0xFF0B479E),
+        backgroundColor: Color.fromARGB(255, 233, 41, 41),
         title: new Text('Meet ${widget.digimon.name}'),
       ),
       body: new ListView(

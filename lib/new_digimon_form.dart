@@ -1,7 +1,6 @@
 import 'package:digimon_app/digimon_model.dart';
 import 'package:flutter/material.dart';
 
-
 class AddDigimonFormPage extends StatefulWidget {
   @override
   _AddDigimonFormPageState createState() => new _AddDigimonFormPageState();

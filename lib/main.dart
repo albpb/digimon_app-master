@@ -10,10 +10,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My fav Digimons',
+      title: 'Marvel Characters',
       theme: ThemeData(brightness: Brightness.dark),
       home: MyHomePage(
-        title: 'My fav Digimons',
+        title: 'Marvel Characters',
       ),
     );
   }
@@ -28,10 +28,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Digimon> initialDigimons = []..add(Digimon('Gatomon'))..add(Digimon('Gomamon'))..add(Digimon('Leomon'));
+  List<Digimon> initialDigimons = []
+    ..add(Digimon('Hulk'))
+    ..add(Digimon('Spider-Man (Peter Parker)'))
+    ..add(Digimon('Daredevil'))
+    ..add(Digimon('Wolverine'))
+    ..add(Digimon('Iron Man'))
+    ..add(Digimon('Thanos'))
+    ..add(Digimon('Galactus'))
+    ..add(Digimon('Kang'));
 
   Future _showNewDigimonForm() async {
-    Digimon newDigimon = await Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+    Digimon newDigimon = await Navigator.of(context)
+        .push(MaterialPageRoute(builder: (BuildContext context) {
       return AddDigimonFormPage();
     }));
     //print(newDigimon);
@@ -49,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: new AppBar(
         title: new Text(widget.title, style: TextStyle(color: Colors.white)),
         centerTitle: true,
-        backgroundColor: Color(0xFF0B479E),
+        backgroundColor: Color.fromARGB(255, 233, 41, 41),
         actions: <Widget>[
           new IconButton(
             icon: new Icon(Icons.add),
@@ -58,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: new Container(
-          color: Color(0xFFABCAED),
+          color: Color.fromARGB(255, 247, 115, 115),
           child: new Center(
             child: new DigimonList(initialDigimons),
           )),
