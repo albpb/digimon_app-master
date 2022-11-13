@@ -13,7 +13,7 @@ class _AddDigimonFormPageState extends State<AddDigimonFormPage> {
     if (nameController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(new SnackBar(
         backgroundColor: Colors.redAccent,
-        content: new Text('You forgot to insert the digimon name'),
+        content: new Text('You forgot to insert your Character name!'),
       ));
     } else {
       var newDigimon = new Digimon(nameController.text);
@@ -25,11 +25,11 @@ class _AddDigimonFormPageState extends State<AddDigimonFormPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Add a new digimon'),
-        backgroundColor: Color(0xFF0B479E),
+        title: new Text('Add a new character'),
+        backgroundColor: Color.fromARGB(255, 233, 41, 41),
       ),
       body: new Container(
-        color: Color(0xFFABCAED),
+        color: Color.fromARGB(255, 247, 115, 115),
         child: new Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 32.0),
           child: new Column(children: [
@@ -40,7 +40,7 @@ class _AddDigimonFormPageState extends State<AddDigimonFormPage> {
                 style: TextStyle(decoration: TextDecoration.none),
                 //onChanged: (v) => nameController.text = v,
                 decoration: new InputDecoration(
-                  labelText: 'Digimon Name',
+                  labelText: 'Name',
                   labelStyle: TextStyle(color: Colors.black),
                 ),
               ),
@@ -51,7 +51,7 @@ class _AddDigimonFormPageState extends State<AddDigimonFormPage> {
                 builder: (context) {
                   return new ElevatedButton(
                     onPressed: () => submitPup(context),
-                    child: new Text('Submit Digimon'),
+                    child: new Text('Submit'),
                   );
                 },
               ),

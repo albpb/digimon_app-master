@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.digimon_app">
    <application
-        android:label="digimon_app"
+        android:label="Marvel Character Viewer"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
